@@ -5,7 +5,7 @@ const cors = require('cors');
 const path = require('path');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000; // Porta configurada automaticamente pelo ambiente do servidor (Netlify)
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -21,7 +21,7 @@ app.post('/salvar-dados', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Servidor rodando em http://localhost:${port}`);
+    console.log(`Servidor rodando na porta ${port}`);
 });
 
 function salvarDadosLocalmente(dados) {
@@ -37,4 +37,3 @@ function salvarDadosLocalmente(dados) {
         }
     });
 }
-

@@ -11,27 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 async function enviarFormulario() {
     try {
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', 'http://localhost:3000/salvar-dados', true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4) {
-                if (xhr.status === 200) {
-                    const data = JSON.parse(xhr.responseText);
-                    if (data.success) {
-                        // Exibir mensagem de sucesso no DOM
-                        mostrarMensagem('Formulário enviado com sucesso!', true);
-                        document.getElementById('formulario').reset();
-                    } else {
-                        throw new Error('Erro ao enviar o formulário.');
-                    }
-                } else {
-                    throw new Error('Erro ao enviar o formulário.');
-                }
-            }
-        };
-
         const nome = document.getElementById('nome').value;
         const email = document.getElementById('email').value;
         const telefone = document.getElementById('telefone').value;
@@ -44,13 +23,29 @@ async function enviarFormulario() {
             mensagem: mensagem
         };
 
-        xhr.send(JSON.stringify(dados));
+        const response = await fetch('https://sandrastoco-pilates.netlify.app/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json; charset=UTF-8'
+            },
+            body: JSON.stringify(dados)
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            if (data.success) {
+                mostrarMensagem('Formulário enviado com sucesso!', true);
+                document.getElementById('formulario').reset();
+            } else {
+                throw new Error('Erro ao enviar o formulário.');
+            }
+        } else {
+            throw new Error('Erro ao enviar o formulário.');
+        }
     } catch (error) {
         console.error("Erro ao enviar o formulário:", error.message);
-        // Exibir mensagem de erro no DOM
         mostrarMensagem("Ocorreu um erro ao enviar o formulário. Por favor, tente novamente mais tarde.", false);
     } finally {
-        // Ativar o botão de envio novamente, independentemente do resultado
         document.getElementById("botao-enviar").disabled = false;
     }
 }
@@ -62,7 +57,6 @@ function mostrarMensagem(message, isSuccess) {
 
     document.body.appendChild(mensagemElement);
 
-    // Remover a mensagem após alguns segundos
     setTimeout(() => {
         document.body.removeChild(mensagemElement);
     }, 5000);
