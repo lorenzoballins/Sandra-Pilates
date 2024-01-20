@@ -17,19 +17,48 @@ app.use(cors(corsOptions));
 
 app.use(bodyParser.json());
 
+// Logs de requisições
+app.use((req, res, next) => {
+    console.log(`Recebida requisição ${req.method} para ${req.url}`);
+    next();
+});
+
 // Roteamento de arquivos estáticos (se aplicável)
 // app.use(express.static('caminho/para/os/seus/arquivos/estaticos'));
 
+// Endpoint para salvar dados
 app.post('/salvar-dados', (req, res) => {
-    const dados = req.body;
-    salvarDadosLocalmente(dados);
+    try {
+        const dados = req.body;
+        console.log('Dados recebidos:', dados);
 
-    console.log('Dados recebidos:', dados);
-    res.json({ success: true });
+        if (!dados.nome || !dados.email || !dados.telefone) {
+            throw new Error('Campos obrigatórios ausentes.');
+        }
+
+        salvarDadosLocalmente(dados);
+        res.json({ success: true });
+    } catch (error) {
+        console.error('Erro no endpoint /salvar-dados:', error.message);
+        res.status(500).json({ success: false, error: error.message });
+    }
 });
 
+// Logs de inicialização
 app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`);
+});
+
+// Logs de erros globais
+process.on('unhandledRejection', (reason, p) => {
+    console.error('Unhandled Rejection at:', p, 'reason:', reason);
+    // Podemos até encerrar o processo em caso de erro não tratado
+    // process.exit(1);
+});
+
+process.on('uncaughtException', (err) => {
+    console.error('Uncaught Exception:', err);
+    // process.exit(1);
 });
 
 function salvarDadosLocalmente(dados) {
