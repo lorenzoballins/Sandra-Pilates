@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stúdio-Sandra</title>
+    <link rel="shortcut icon" href="imagens/logocortada--icone.ico" type="image/x-icon">
+    <link rel="stylesheet" href="contato.css">
+
+
+</head>
+
+
+
+<body>
+    <header>
+        <div class="phone-number">
+            <span>(41) 99224-2470</span>
+        </div>
+        <a href="https://wa.me/5541992242470?text=Olá+Sandra,+Vim+pelo+site,+Tenho+interesse+pelas+aulas"
+            class="whatsapp-link" target="_blank">
+            <img src="imagens/whatssap.png" alt="WhatsApp">
+            <span class="tooltip">Agende pelo WhatsApp</span>
+        </a>
+        <img class="logo" src="imagens/logocortada-removebg-preview.png" alt="logo Studio pilates">
+        <h1 id="principal">Sandra Stoco</h1>
+        <h2 class="subtitulo">STUDIO DE PILATES E FISIOTERAPIA</h2>
+        <nav>
+            <div class="menu-toggle" onclick="toggleMenu()">☰ Menu</div>
+
+            <ul id="navList">
+                <a href="início.html" class="link">Início</a>
+                <a href="método.html" class="link">Método</a>
+                <a href="estúdio.html" class="link">Stúdio</a>
+                <a href="Profissional.html" class="link">Profissional</a>
+                <a href="Benefícios.html" class="link">Benefícios</a>
+                <a href="aulas.html" class="link">Aulas</a>
+                <a href="contato.html" class="pagina-atual" class="link">contato</a>
+
+            </ul>
+        </nav>
+        <img src="imagens/contato01.jpg" alt="imagem pilates" id="img1">
+    </header>
+    <script>
+        function toggleMenu() {
+            var navList = document.getElementById("navList");
+            navList.style.display = (navList.style.display === "flex" || navList.style.display === "") ? "none" : "flex";
+        }
+    </script>
+
+    <main>
+        <section>
+            <p style="text-align: left; margin-left: 20px; margin: 0px;"><em>Início >> Contato</em></p>
+            <hr>
+        </section>
+        <section>
+            <!-- Seu script JavaScript -->
+           <script src="contato.js"></script>
+            <article>
+                <h1 style="margin-left: 20px;">Agende a sua aula experimental aqui</h1>
+                <p>Explore pessoalmente os benefícios e o funcionamento do Stúdio.</p>
+
+                <form id="formulario" action="#" method="post" onsubmit="enviarFormulario(); return false">
+                    <label for="nome">Nome completo:<sup>*</sup></label>
+                    <input type="text" id="nome" name="nome" required>
+
+                    <label for="email">Email:<sup>*</sup></label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="telefone">Telefone:<sup>*</sup></label>
+                    <input type="text" id="telefone" name="telefone" required oninput="formatarTelefone()">
+
+                    <label for="tempo">Em qual dia e horário você tem disponibilidade para a aula experimental?</label>
+                    <input type="text" id="tempo" name="dia e hora">
+
+                    <label for="mensagem">Qual seu objetivo com pilates?</label>
+                    <textarea id="mensagem" name="mensagem" rows="3"></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+            </article>
+
+            <section>
+                <article class="container">
+                    <h1 id="método-01" style="text-align: center;">Conheça o <span>Método</span> utilizado</h1>
+                    <p> Desperte a força do seu corpo com exercícios dinâmicos , conduzidos por profissionais
+                        qualificados.
+                    </p>
+
+                    <article id="saiba">
+                        <p><a href="método.html" id="saibalink">Saiba <sup style="color: aliceblue;">+</sup></a></p>
+                    </article>
+                </article>
+            </section>
+
+            <section class="mapBox">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d757.2517295388683!2d-49.52939394254399!3d-25.467782455062647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dd17ac2a516499%3A0xee9384000ac2b295!2sSandra%20Stoco%20Studio%20de%20Pilates%20e%20Fisioterapia!5e0!3m2!1spt-BR!2sbr!4v1704629350642!5m2!1spt-BR!2sbr"
+                    width="2000" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </section>
+    </main>
+
+    <footer>
+        <article>
+            <h2>Menu:</h2>
+            <p><a href="início.html">Ínico</a> <br> <a href="estúdio.html">Stúdio</a> <br> <a
+                    href="método.html">Métodos
+                </a><br><a href="aulas.html">Aulas</a><br><a href="Profissional.html">Profissional</a> <br><a
+                    href="contato.html">Contato</a><br><a href="Benefícios.html">Benefícios</a></p>
+        </article>
+        <article>
+            <h2 style="font-size: 26px; margin-top: 10px; ">Stúdio Sandra Stoco:</h2>
+            <p style="margin-left: 40px;">R. Francisco Chemim, 519 <br>- Centro, Campo Largo <br>- PR, 83601-290</p>
+        </article>
+        <article>
+            <h2>Nossas Redes Sociais:</h2>
+            <a href="https://www.instagram.com/sandrastocopilates/" target="_blank" rel="external"
+                style=" border-bottom: transparent;"><img src="imagens/logoinstagram.avif" alt="instagram"></a>
+        </article>
+    </footer>
+    <div id="ephemera">
+        <p>Denvolvido por:</p><img src="imagens/ephemera-removebg.png" alt="logo-ephemera-Crafts">
+    </div>
+</body>
+
+</html>
