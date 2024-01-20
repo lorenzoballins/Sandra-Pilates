@@ -1,2 +1,4 @@
 /*
-  Access-Control-Allow-Origin: https://sandrastoco-pilates.netlify.app/
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: POST
+  Access-Control-Allow-Headers: Content-Type

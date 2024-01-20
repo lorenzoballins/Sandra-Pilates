@@ -23,7 +23,7 @@ async function enviarFormulario() {
             mensagem: mensagem
         };
 
-        const response = await fetch('https://sandrastoco-pilates.netlify.app/', {
+        const response = await fetch('/.netlify/functions/server/salvar-dados', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json; charset=UTF-8'
@@ -37,10 +37,10 @@ async function enviarFormulario() {
                 mostrarMensagem('Formulário enviado com sucesso!', true);
                 document.getElementById('formulario').reset();
             } else {
-                throw new Error('Erro ao enviar o formulário.');
+                mostrarMensagem('Erro ao enviar o formulário.', false);
             }
         } else {
-            throw new Error('Erro ao enviar o formulário.');
+            mostrarMensagem('Erro ao enviar o formulário.', false);
         }
     } catch (error) {
         console.error("Erro ao enviar o formulário:", error.message);

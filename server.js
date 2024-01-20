@@ -5,9 +5,11 @@ const cors = require('cors');
 const path = require('path');
 
 const app = express();
-const port = process.env.PORT || 3000; // Porta configurada automaticamente pelo ambiente do servidor (Netlify)
+const port = process.env.PORT || 3000;
 
+// Configuração CORS
 app.use(cors());
+
 app.use(bodyParser.json());
 
 app.post('/salvar-dados', (req, res) => {
