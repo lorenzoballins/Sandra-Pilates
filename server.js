@@ -7,6 +7,7 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
+
 // Configuração CORS
 const corsOptions = {
     origin: '*',
@@ -43,7 +44,7 @@ app.post('/salvar-dados', (req, res) => {
 
 // Logs de inicialização
 app.listen(port, () => {
-    console.log(`Servidor rodando em http://192.168.15.17:${port}`);
+    console.log(`Servidor rodando em https://192.168.15.17:${port}`);
 });
 
 // Logs de erros globais

@@ -35,7 +35,9 @@ async function enviarFormulario() {
             mensagem: mensagem
         };
 
-        const response = await fetch('http://192.168.15.17:3000/salvar-dados', {
+        // Use a variável de ambiente SERVER_URL
+        const serverUrl = process.env.SERVER_URL || 'https://localhost:3000';
+        const response = await fetch(`${serverUrl}/salvar-dados`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
