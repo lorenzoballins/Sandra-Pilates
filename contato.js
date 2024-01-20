@@ -1,1 +1,71 @@
-document.addEventListener("DOMContentLoaded",function(){const a=document.getElementById("formulario");a.addEventListener("submit",function(a){a.preventDefault(),document.getElementById("botao-enviar").disabled=!0,enviarFormulario()})});async function enviarFormulario(){try{const a=document.getElementById("nome").value,b=document.getElementById("email").value,c=document.getElementById("telefone").value,d=document.getElementById("mensagem").value;if(!a||!b||!c)throw new Error("Por favor, preencha todos os campos obrigat\xF3rios.");const e=await fetch("http://localhost:3000/salvar-dados",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({nome:a,email:b,telefone:c,mensagem:d})}),f=await e.json();if(f.success)alert("Formul\xE1rio enviado com sucesso! Entraremos em contato em breve."),mostrarNotificacao("Formul\xE1rio enviado com sucesso!"),document.getElementById("formulario").removeEventListener("submit",enviarFormulario);else throw new Error("Erro ao enviar o formul\xE1rio.")}catch(a){console.error("Erro ao enviar o formul\xE1rio:",a.message),alert("Ocorreu um erro ao enviar o formul\xE1rio. Por favor, tente novamente mais tarde.")}finally{document.getElementById("botao-enviar").disabled=!1}}function mostrarNotificacao(a){if("Notification"in window)if("granted"===Notification.permission){new Notification("Notifica\xE7\xE3o de Envio",{body:a})}else"denied"!==Notification.permission&&Notification.requestPermission().then(b=>{if("granted"===b){new Notification("Notifica\xE7\xE3o de Envio",{body:a})}})}
+document.addEventListener("DOMContentLoaded", function () {
+    const formulario = document.getElementById("formulario");
+
+    formulario.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        // Desativar o botão de envio para evitar envios múltiplos
+        document.getElementById("botao-enviar").disabled = true;
+
+        enviarFormulario();
+    });
+});
+
+async function enviarFormulario() {
+    try {
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', 'http://localhost:3000/salvar-dados', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    const data = JSON.parse(xhr.responseText);
+                    if (data.success) {
+                        alert('Formulário enviado com sucesso!');
+                        mostrarNotificacao('Formulário enviado com sucesso!');
+                        document.getElementById('formulario').removeEventListener('submit', enviarFormulario);
+                    } else {
+                        throw new Error('Erro ao enviar o formulário.');
+                    }
+                } else {
+                    throw new Error('Erro ao enviar o formulário.');
+                }
+            }
+        };
+
+        const nome = document.getElementById('nome').value;
+        const email = document.getElementById('email').value;
+        const telefone = document.getElementById('telefone').value;
+        const mensagem = document.getElementById('mensagem').value;
+
+        const dados = {
+            nome: nome,
+            email: email,
+            telefone: telefone,
+            mensagem: mensagem
+        };
+
+        xhr.send(JSON.stringify(dados));
+    } catch (error) {
+        console.error("Erro ao enviar o formulário:", error.message);
+        alert("Ocorreu um erro ao enviar o formulário. Por favor, tente novamente mais tarde.");
+    } finally {
+        // Ativar o botão de envio novamente, independentemente do resultado
+        document.getElementById("botao-enviar").disabled = false;
+    }
+}
+
+function mostrarNotificacao(message) {
+    if ("Notification" in window) {
+        if (Notification.permission === "granted") {
+            new Notification("Notificação de Envio", { body: message });
+        } else if (Notification.permission !== "denied") {
+            Notification.requestPermission().then(permission => {
+                if (permission === "granted") {
+                    new Notification("Notificação de Envio", { body: message });
+                }
+            });
+        }
+    }
+}
