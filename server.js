@@ -5,11 +5,9 @@ const cors = require('cors');
 const path = require('path');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = 3000;
 
-// Configuração CORS
 app.use(cors());
-
 app.use(bodyParser.json());
 
 app.post('/salvar-dados', (req, res) => {
@@ -23,7 +21,7 @@ app.post('/salvar-dados', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Servidor rodando na porta ${port}`);
+    console.log(`Servidor rodando em http://localhost:${port}`);
 });
 
 function salvarDadosLocalmente(dados) {
