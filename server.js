@@ -7,13 +7,21 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
-app.use(cors());
+// Configuração CORS
+const corsOptions = {
+    origin: '*',
+    methods: 'POST',
+    optionsSuccessStatus: 204,
+};
+app.use(cors(corsOptions));
+
 app.use(bodyParser.json());
+
+// Roteamento de arquivos estáticos (se aplicável)
+// app.use(express.static('caminho/para/os/seus/arquivos/estaticos'));
 
 app.post('/salvar-dados', (req, res) => {
     const dados = req.body;
-
-    // Salve os dados localmente
     salvarDadosLocalmente(dados);
 
     console.log('Dados recebidos:', dados);

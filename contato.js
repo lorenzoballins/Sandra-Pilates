@@ -3,19 +3,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     formulario.addEventListener('submit', async function (event) {
         event.preventDefault();
-
-        // Desativar o botão de envio para evitar envios múltiplos
         document.getElementById('botao-enviar').disabled = true;
 
         await enviarFormulario();
     });
 });
 
-let envioEmProgresso = false; // Adicionado para rastrear o status do envio
+let envioEmProgresso = false;
 
 async function enviarFormulario() {
     try {
-        // Verificar se o envio já está em andamento
         if (envioEmProgresso) {
             return;
         }
@@ -27,7 +24,6 @@ async function enviarFormulario() {
         const telefone = document.getElementById('telefone').value;
         const mensagem = document.getElementById('mensagem').value;
 
-        // Validar campos obrigatórios
         if (!nome || !email || !telefone) {
             throw new Error('Por favor, preencha todos os campos obrigatórios.');
         }
@@ -39,8 +35,7 @@ async function enviarFormulario() {
             mensagem: mensagem
         };
 
-        // Enviar os dados para o servidor local
-        const response = await fetch('http://localhost:3000/salvar-dados', {
+        const response = await fetch('https://localhost:3000/salvar-dados', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -52,9 +47,7 @@ async function enviarFormulario() {
 
         if (data.success) {
             alert('Formulário enviado com sucesso! Entraremos em contato em breve.');
-
-            // Remova o ouvinte de eventos após o envio bem-sucedido
-            document.getElementById('formulario').removeEventListener('submit', enviarFormulario);
+            document.getElementById('formulario').reset();
         } else {
             throw new Error('Erro ao enviar o formulário.');
         }
@@ -62,10 +55,7 @@ async function enviarFormulario() {
         console.error('Erro ao enviar o formulário:', error.message);
         alert('Ocorreu um erro ao enviar o formulário. Por favor, tente novamente mais tarde.');
     } finally {
-        // Ative o botão de envio novamente, independentemente do resultado
         document.getElementById('botao-enviar').disabled = false;
-
-        // Resetar o status do envio
         envioEmProgresso = false;
     }
 }
