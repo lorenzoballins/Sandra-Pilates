@@ -23,9 +23,6 @@ app.use((req, res, next) => {
     next();
 });
 
-// Roteamento de arquivos estáticos (se aplicável)
-// app.use(express.static('caminho/para/os/seus/arquivos/estaticos'));
-
 // Endpoint para salvar dados
 app.post('/salvar-dados', (req, res) => {
     try {
@@ -46,7 +43,7 @@ app.post('/salvar-dados', (req, res) => {
 
 // Logs de inicialização
 app.listen(port, () => {
-    console.log(`Servidor rodando em http://localhost:${port}`);
+    console.log(`Servidor rodando em http://192.168.15.17:${port}`);
 });
 
 // Logs de erros globais

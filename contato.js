@@ -35,7 +35,7 @@ async function enviarFormulario() {
             mensagem: mensagem
         };
 
-        const response = await fetch('https://localhost:3000/salvar-dados', {
+        const response = await fetch('http://192.168.15.17:3000/salvar-dados', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
