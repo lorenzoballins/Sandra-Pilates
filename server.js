@@ -8,9 +8,9 @@ const https = require('https');
 const app = express();
 const port = 3001;
 
-// Configuração CORS
+// Configuração CORS para aceitar qualquer origem durante o desenvolvimento local
 const corsOptions = {
-    origin: 'https://seu-front-end.com',  // Substitua pelo endereço do seu frontend
+    origin: '*',
     methods: 'POST',
     optionsSuccessStatus: 204,
 };

@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
     const formulario = document.getElementById('formulario');
-    let envioEmProgresso = false;
 
     formulario.addEventListener('submit', async function (event) {
         event.preventDefault();
@@ -38,8 +37,7 @@ async function enviarFormulario() {
         mensagem: mensagem
     };
 
-    const serverUrl = detectarAmbiente() === 'production' ? 'https://localhost:3000' : 'http://localhost:3000';
-    const response = await fetch(`${serverUrl}/salvar-dados`, {
+    const response = await fetch('https://localhost:3001/salvar-dados', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -52,8 +50,4 @@ async function enviarFormulario() {
     if (!data.success) {
         throw new Error('Erro ao enviar o formulário.');
     }
-}
-
-function detectarAmbiente() {
-    return typeof window !== 'undefined' && window.location.href.startsWith('https://') ? 'production' : 'development';
 }
