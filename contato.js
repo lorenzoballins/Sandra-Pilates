@@ -42,7 +42,7 @@ async function enviarFormulario() {
         mensagem: mensagem
     };
 
-    const response = await fetch('https://localhost:3001/salvar-dados', {
+    const response = await fetch('https://127.0.0.1:3001/salvar-dados', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
