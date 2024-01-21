@@ -3,10 +3,10 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 const cors = require('cors');
 const path = require('path');
+const https = require('https');
 
 const app = express();
 const port = 3000;
-
 
 // Configuração CORS
 const corsOptions = {
@@ -42,9 +42,17 @@ app.post('/salvar-dados', (req, res) => {
     }
 });
 
+// Configuração do servidor HTTPS
+const options = {
+    key: fs.readFileSync('key.pem'),
+    cert: fs.readFileSync('cert.pem'),
+};
+
+const server = https.createServer(options, app);
+
 // Logs de inicialização
-app.listen(port, () => {
-    console.log(`Servidor rodando em https://192.168.15.17:${port}`);
+server.listen(port, () => {
+    console.log(`Servidor HTTPS rodando na porta ${port}`);
 });
 
 // Logs de erros globais
@@ -71,4 +79,4 @@ function salvarDadosLocalmente(dados) {
             console.log('Dados salvos localmente!');
         }
     });
-}
+} 

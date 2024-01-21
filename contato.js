@@ -38,7 +38,7 @@ async function enviarFormulario() {
         mensagem: mensagem
     };
 
-    const serverUrl = detectarAmbiente() === 'production' ? 'https://192.168.15.17:3000' : 'http://localhost:3000';
+    const serverUrl = detectarAmbiente() === 'production' ? 'https://localhost:3000' : 'http://localhost:3000';
     const response = await fetch(`${serverUrl}/salvar-dados`, {
         method: 'POST',
         headers: {
