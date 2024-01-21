@@ -6,11 +6,11 @@ const path = require('path');
 const https = require('https');
 
 const app = express();
-const port = 3000;
+const port = 3001;
 
 // Configuração CORS
 const corsOptions = {
-    origin: '*',
+    origin: 'https://seu-front-end.com',  // Substitua pelo endereço do seu frontend
     methods: 'POST',
     optionsSuccessStatus: 204,
 };
@@ -55,23 +55,11 @@ server.listen(port, () => {
     console.log(`Servidor HTTPS rodando na porta ${port}`);
 });
 
-// Logs de erros globais
-process.on('unhandledRejection', (reason, p) => {
-    console.error('Unhandled Rejection at:', p, 'reason:', reason);
-    // Podemos até encerrar o processo em caso de erro não tratado
-    // process.exit(1);
-});
-
-process.on('uncaughtException', (err) => {
-    console.error('Uncaught Exception:', err);
-    // process.exit(1);
-});
-
 function salvarDadosLocalmente(dados) {
     const dataString = `${new Date().toLocaleString()}\nNome: ${dados.nome}\nEmail: ${dados.email}\nTelefone: ${dados.telefone}\nMensagem: ${dados.mensagem}\n\n`;
 
     const filePath = path.join(__dirname, 'respostas.txt');
-    
+
     fs.writeFile(filePath, dataString, { flag: 'a' }, (err) => {
         if (err) {
             console.error('Erro ao salvar os dados localmente:', err);
@@ -79,4 +67,4 @@ function salvarDadosLocalmente(dados) {
             console.log('Dados salvos localmente!');
         }
     });
-} 
+}
