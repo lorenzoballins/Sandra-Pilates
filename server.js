@@ -9,12 +9,7 @@ const app = express();
 const port = 3001;
 
 // Configuração CORS para aceitar qualquer origem durante o desenvolvimento local
-const corsOptions = {
-    origin: '*',
-    methods: 'POST',
-    optionsSuccessStatus: 204,
-};
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use(bodyParser.json());
 
