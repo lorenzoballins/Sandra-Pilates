@@ -7,8 +7,8 @@
     <title>Stúdio-Sandra</title>
     <link rel="shortcut icon" href="imagens/logocortada--icone.ico" type="image/x-icon">
     <link rel="stylesheet" href="contato.css">
-     <!-- Seu script JavaScript -->
-     <script src="contato.js"></script>
+    <!-- Seu script JavaScript -->
+    <script defer src="contato.js"></script>
 
 </head>
 
@@ -53,32 +53,106 @@
     <main>
         <section>
             <p style="text-align: left; margin-left: 20px; margin: 0px;"><em>Início >> Contato</em></p>
-            <hr>
+
         </section>
         <section>
-           
-            <article>
-                <h1 style="margin-left: 20px;">Agende a sua aula experimental aqui</h1>
-                <p>Explore pessoalmente os benefícios e o funcionamento do Stúdio.</p>
 
-                <form id="formulario" action="#" method="post" >
-                    <label for="nome">Nome completo:<sup>*</sup></label>
-                    <input type="text" id="nome" name="nome" required>
 
-                    <label for="email">Email:<sup>*</sup></label>
-                    <input type="email" id="email" name="email" required>
 
-                    <label for="telefone">Telefone:<sup>*</sup></label>
-                    <input type="text" id="telefone" name="telefone" required >
 
-                    <label for="tempo">Em qual dia e horário você tem disponibilidade para a aula experimental?</label>
-                    <input type="text" id="tempo" name="dia e hora">
+            <div class="forms">
+                <article class="form-manager">
 
-                    <label for="mensagem">Qual seu objetivo com pilates?</label>
-                    <textarea id="mensagem" name="mensagem" rows="3"></textarea>
-                    <button id="botao-enviar"  type="submit">Enviar</button>
-                </form>
-            </article>
+
+                    <form class="form" action="sucess.html" name="contact" netlify>
+                        <h1>Agende a sua aula experimental aqui
+
+                            <svg stroke-width="0" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#3e3e3e"
+                                    d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z">
+                                </path>
+                            </svg>
+                        </h1>
+
+
+
+                        <div class="form-inputs">
+                            <label for="name" id="label-name">Nome completo
+                                <input type="text" id="name" name="name" placeholder="digite seu nome" required
+                                    onblur="blurInput(this)">
+                            </label>
+
+
+                            <label for="email" id="label-email">Email
+                                <input type="email" id="email" name="email" placeholder="exemplo@domínio.com" required
+                                    onblur="blurInput(this)">
+                            </label>
+
+
+                            <label for="phone" id="label-phone">Telefone
+                                <input type="text" id="phone" name="phone" placeholder="(41) 99394-3745" required
+                                    onblur="blurInput(this)">
+                            </label>
+
+
+                            <label for="time" id="label-time"> dia e horário para a aula experimental?
+                                <input type="text" id="phone" placeholder="digite o horário e dia" name="dia e hora"
+                                    onblur="blurInput(this)">
+                            </label>
+
+
+                            <label for="message" id="label-message">Qual seu objetivo com pilates?
+                                <input type="text" id="message" name="message" placeholder="Escreva sua mensagem
+                                " onblur="blurInput(this)">
+                            </label>
+
+                        </div>
+                        <button id="botao-enviar" type="submit">Enviar <svg stroke-width="0" viewBox="0 0 512 512"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#EDF1F7"
+                                    d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z">
+                                </path>
+                            </svg></button>
+                    </form>
+
+                    <div class="contact">
+                        <div class="contact-info">
+                            <h1>informações de contato</h1>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                    <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/>
+                                  </svg>
+                                    
+                                  <div>rua francisco chemin 519,centro,Campo Largo,PR</div>
+                            </div>
+                            <div>
+                                <svg viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M272 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM160 480c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm112-108c0 6.6-5.4 12-12 12H60c-6.6 0-12-5.4-12-12V60c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v312z">
+                                    </path>
+                                </svg>
+                                <div>
+                                   (41) 992242470
+                                </div>
+                        </div>
+
+                            <div class="contact-socials">
+                                <a href="https://www.instagram.com/sandrastocopilates/" target="_blank" rel="external">
+                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                                    viewBox="0 0 50 50">
+                                    <path
+                                        d="M 16 3 C 8.8324839 3 3 8.8324839 3 16 L 3 34 C 3 41.167516 8.8324839 47 16 47 L 34 47 C 41.167516 47 47 41.167516 47 34 L 47 16 C 47 8.8324839 41.167516 3 34 3 L 16 3 z M 16 5 L 34 5 C 40.086484 5 45 9.9135161 45 16 L 45 34 C 45 40.086484 40.086484 45 34 45 L 16 45 C 9.9135161 45 5 40.086484 5 34 L 5 16 C 5 9.9135161 9.9135161 5 16 5 z M 37 11 A 2 2 0 0 0 35 13 A 2 2 0 0 0 37 15 A 2 2 0 0 0 39 13 A 2 2 0 0 0 37 11 z M 25 14 C 18.936712 14 14 18.936712 14 25 C 14 31.063288 18.936712 36 25 36 C 31.063288 36 36 31.063288 36 25 C 36 18.936712 31.063288 14 25 14 z M 25 16 C 29.982407 16 34 20.017593 34 25 C 34 29.982407 29.982407 34 25 34 C 20.017593 34 16 29.982407 16 25 C 16 20.017593 20.017593 16 25 16 z">
+                                    </path>
+                                </a>
+                               
+                                    
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
 
             <section>
                 <article class="container">
@@ -104,8 +178,7 @@
     <footer>
         <article>
             <h2>Menu:</h2>
-            <p><a href="index.html">Ínico</a> <br> <a href="estúdio.html">Stúdio</a> <br> <a
-                    href="método.html">Métodos
+            <p><a href="index.html">Ínico</a> <br> <a href="estúdio.html">Stúdio</a> <br> <a href="método.html">Métodos
                 </a><br><a href="aulas.html">Aulas</a><br><a href="Profissional.html">Profissional</a> <br><a
                     href="contato.html">Contato</a><br><a href="Benefícios.html">Benefícios</a></p>
         </article>
