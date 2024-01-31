@@ -1,38 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>https://sandrastoco-pilates.netlify.app/pagina1</loc>
-        <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://sandrastoco-pilates.netlify.app/m%C3%A9todo.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://sandrastoco-pilates.netlify.app/est%C3%BAdio.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://sandrastoco-pilates.netlify.app/profissional</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://sandrastoco-pilates.netlify.app/benef%C3%ADcios</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://sandrastoco-pilates.netlify.app/aulas</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.3</priority>
-    </url>
-    <url>
-        <loc>https://sandrastoco-pilates.netlify.app/contato</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.4</priority>
-    </url>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://sandrastoco-pilates.com.br/</loc>
+  <lastmod>2024-01-31T13:06:37+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://sandrastoco-pilates.com.br/m%C3%A9todo.html</loc>
+  <lastmod>2024-01-31T13:06:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sandrastoco-pilates.com.br/est%C3%BAdio.html</loc>
+  <lastmod>2024-01-31T13:06:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sandrastoco-pilates.com.br/profissional</loc>
+  <lastmod>2024-01-31T13:06:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sandrastoco-pilates.com.br/benef%C3%ADcios</loc>
+  <lastmod>2024-01-31T13:06:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sandrastoco-pilates.com.br/aulas</loc>
+  <lastmod>2024-01-31T13:06:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sandrastoco-pilates.com.br/contato</loc>
+  <lastmod>2024-01-31T13:06:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
 </urlset>
