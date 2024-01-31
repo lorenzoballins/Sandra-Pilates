@@ -258,9 +258,15 @@ span {
     padding: 0px;
     float: none;
   }
+  p{
+    text-align: justify;
+    text-align: center;
+  }
 }
 
-
+.container{
+  margin-top: 150px;
+}
 
 article#saiba{
   display: inline-block;
@@ -269,10 +275,12 @@ background-color: #24B0F0;
 
 }
  .método-01{
-  margin-top: 250px;
+  font-size: 50px;
+  margin-top: 300px;
  }
  @media(max-width:900px){
   .método-01{
+    
     margin-top: 40px;
   }
 }
