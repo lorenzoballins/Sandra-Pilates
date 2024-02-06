@@ -407,8 +407,13 @@ footer>a:hover {
   background-color: #00aeff;
 }
 
-div#ephemera {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+#lorenzo>p{
+  text-align: center;
+  font-size: 25px;
+}
+#lorenzo>p>a{
+  color: rgb(44, 44, 44);
+  font-size: 30px;
+  text-decoration: underline;
+  border-bottom: transparent;
 }

@@ -502,15 +502,19 @@ footer > article > p {
   color: white;
   margin: 10px 0;
 }
+#lorenzo>p{
+  text-align: center;
+  font-size: 25px;
+}
+#lorenzo>p>a{
+  color: rgb(44, 44, 44);
+  font-size: 30px;
+  text-decoration: underline;
+  border-bottom: transparent;
+}
 
 
-
-    div#ephemera{
-      background-color: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+   
 
    
 
